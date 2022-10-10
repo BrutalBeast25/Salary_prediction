@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> ML API </title>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Codensed:300' rel='stylesheet' type='text/css'>
+
+    </head>
+
+    <body>
+        <div class="login">
+            <center>
+            <h1> Salary Prediction </h1>
+
+            <h4> Please enter the value in integer or float format </h4>
+            <form action="{{ url_for('predict') }}" method="post">
+                <input type='text' name='experience' placeholder="Experience" required="required" />
+                <input type='text' name='test_score' placeholder="Test score" required="required" />
+                <input type='text' name='interview_score' placeholder="Interview score" required="required" />
+
+                <button type="submit" class=" btn btn-primary btn-block btn-large">Predict</button>
+            </center>
+            </form>
+        <br>
+        <br>
+        <center>
+        {{ prediction_text }}
+        </center>
+        </div>
+    </body>
+</html>
